@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Services-Conseils YPL</title>
-<meta name="description" content="Services-conseils en infrastructure open source : Linux, observabilité, Kubernetes, infonuagique, automatisation et LLM locaux.">
+<meta name="description" content="Services-conseils en infrastructure open source : Linux, observabilité, Kubernetes, infonuagique, automatisation et IA générative locale.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -48,7 +48,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backgroun
 nav{display:flex;gap:22px;flex-wrap:wrap}
 nav a{color:var(--muted);text-decoration:none;font-size:15px}
 nav a:hover{color:var(--ink)}
-@media (max-width:720px){nav a:not(.nav-contact){display:none}}
+@media (max-width:720px){nav a:not(.nav-contact){display:none}nav{gap:14px}}
 .nav-contact{color:var(--accent)!important;font-weight:600}
 
 /* hero */
@@ -140,6 +140,14 @@ section{padding-block:72px}
 footer{padding-block:28px;font-size:14px;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 footer code{font-family:var(--mono);font-size:12.5px}
+
+/* language */
+:root:not(.lang-en) .en{display:none!important}
+:root.lang-en .fr{display:none!important}
+:root.lang-en .steps li::before{content:"step " counter(s)}
+.lang-toggle{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:4px 9px;cursor:pointer}
+.lang-toggle:hover{border-color:var(--ink)}
+nav{align-items:center}
 </style>
 </head>
 <body>
@@ -147,11 +155,12 @@ footer code{font-family:var(--mono);font-size:12.5px}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#accueil"><span class="brand-mark">YPL</span><span class="brand-name">Services-Conseils YPL</span></a>
-    <nav aria-label="Navigation principale">
+    <nav aria-label="Navigation">
       <a href="#services">Services</a>
-      <a href="#llm">LLM locaux</a>
-      <a href="#approche">Approche</a>
-      <a class="nav-contact" href="#contact">Nous joindre</a>
+      <a href="#llm"><span class="fr">IA générative locale</span><span class="en" lang="en">Local generative AI</span></a>
+      <a href="#approche"><span class="fr">Approche</span><span class="en" lang="en">Approach</span></a>
+      <a class="nav-contact" href="#contact"><span class="fr">Nous joindre</span><span class="en" lang="en">Contact us</span></a>
+      <button class="lang-toggle" id="lang" type="button" aria-label="English version">EN</button>
     </nav>
   </div>
 </header>
@@ -160,12 +169,12 @@ footer code{font-family:var(--mono);font-size:12.5px}
   <div class="wrap hero">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Services-conseils en infrastructure et LLM locaux</p>
-        <h1>Une infrastructure <em>open source</em>, solide et observable.</h1>
-        <p class="lede">Notre équipe accompagne les organisations dans la conception, l’automatisation et la supervision de leurs plateformes Linux, Kubernetes et infonuagiques, ainsi que dans le déploiement de modèles d’intelligence artificielle hébergés sur leur propre infrastructure.</p>
+        <p class="eyebrow"><span class="fr">Services-conseils en infrastructure et IA générative locale</span><span class="en" lang="en">Infrastructure and local generative AI consulting</span></p>
+        <h1><span class="fr">Une infrastructure <em>open source</em>, solide et observable.</span><span class="en" lang="en">Solid, observable <em>open source</em> infrastructure.</span></h1>
+        <p class="lede"><span class="fr">Notre équipe accompagne les organisations dans la conception, l’automatisation et la supervision de leurs plateformes Linux, Kubernetes et infonuagiques, ainsi que dans le déploiement de modèles d’intelligence artificielle hébergés sur leur propre infrastructure.</span><span class="en" lang="en">Our team helps organizations design, automate and monitor their Linux, Kubernetes and cloud platforms, and deploy artificial intelligence models hosted on their own infrastructure.</span></p>
         <div class="cta-row">
-          <a class="btn" href="#contact">Discuter de votre projet</a>
-          <a class="btn btn-ghost" href="#services">Voir les services</a>
+          <a class="btn" href="#contact"><span class="fr">Discuter de votre projet</span><span class="en" lang="en">Discuss your project</span></a>
+          <a class="btn btn-ghost" href="#services"><span class="fr">Voir les services</span><span class="en" lang="en">View services</span></a>
         </div>
       </div>
       <div class="term" aria-label="Illustration : état d’une plateforme supervisée">
@@ -195,45 +204,45 @@ qwen2.5-coder:14b  9.0 GB
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Services</p>
-        <h2>Notre offre de services</h2>
-        <p>Des outils ouverts, éprouvés en production, choisis pour leur fiabilité et pour éviter la dépendance à un fournisseur. Une expérience acquise dans des secteurs exigeants : santé, jeux et loteries en ligne, billetterie à fort volume et services professionnels.</p>
+        <h2><span class="fr">Notre offre de services</span><span class="en" lang="en">Our services</span></h2>
+        <p><span class="fr">Des outils ouverts, éprouvés en production, choisis pour leur fiabilité et pour éviter la dépendance à un fournisseur. Une expérience acquise dans des secteurs exigeants : santé, jeux et loteries en ligne, billetterie à fort volume et services professionnels.</span><span class="en" lang="en">Open, production-proven tools, selected for their reliability and to avoid vendor lock-in. Experience gained in demanding sectors: healthcare, online gaming and lotteries, high-volume ticketing and professional services.</span></p>
       </div>
       <div class="services">
         <article class="svc">
           <p class="svc-path">/linux</p>
-          <h3>Linux et systèmes</h3>
-          <p>Administration, durcissement et migration de parcs Linux et Unix. Virtualisation, haute disponibilité et mises à jour de sécurité à grande échelle.</p>
+          <h3><span class="fr">Linux et systèmes</span><span class="en" lang="en">Linux and systems</span></h3>
+          <p><span class="fr">Administration, durcissement et migration de parcs Linux et Unix. Virtualisation, haute disponibilité et mises à jour de sécurité à grande échelle.</span><span class="en" lang="en">Administration, hardening and migration of Linux and Unix fleets. Virtualization, high availability and security updates at scale.</span></p>
           <ul class="tags"><li>RHEL</li><li>Ubuntu</li><li>Debian</li><li>Proxmox/KVM</li></ul>
         </article>
         <article class="svc">
-          <p class="svc-path">/observabilite</p>
-          <h3>Observabilité</h3>
-          <p>Centralisation des métriques, des journaux et des alertes afin de détecter les incidents de façon proactive. Conception de tableaux de bord et de règles d’alerte pertinents.</p>
+          <p class="svc-path"><span class="fr">/observabilite</span><span class="en" lang="en">/observability</span></p>
+          <h3><span class="fr">Observabilité</span><span class="en" lang="en">Observability</span></h3>
+          <p><span class="fr">Centralisation des métriques, des journaux et des alertes afin de détecter les incidents de façon proactive. Conception de tableaux de bord et de règles d’alerte pertinents.</span><span class="en" lang="en">Centralized metrics, logs and alerts to detect incidents proactively. Design of meaningful dashboards and alerting rules.</span></p>
           <ul class="tags"><li>Prometheus</li><li>Grafana</li><li>OpenSearch</li><li>Thanos</li><li>Alertmanager</li><li>OpenTelemetry</li><li>Fluent-Bit</li></ul>
         </article>
         <article class="svc">
-          <p class="svc-path">/conteneurs</p>
-          <h3>Kubernetes et conteneurs</h3>
-          <p>Mise en place et exploitation de grappes Kubernetes sur site ou en nuage, avec déploiement continu piloté par Git.</p>
+          <p class="svc-path"><span class="fr">/conteneurs</span><span class="en" lang="en">/containers</span></p>
+          <h3><span class="fr">Kubernetes et conteneurs</span><span class="en" lang="en">Kubernetes and containers</span></h3>
+          <p><span class="fr">Mise en place et exploitation de grappes Kubernetes sur site ou en nuage, avec déploiement continu piloté par Git.</span><span class="en" lang="en">Deployment and operation of Kubernetes clusters on premises or in the cloud, with Git-driven continuous delivery.</span></p>
           <ul class="tags"><li>Kubernetes</li><li>OpenShift</li><li>Docker</li><li>FluxCD</li><li>Argo CD</li></ul>
         </article>
         <article class="svc">
-          <p class="svc-path">/infonuagique</p>
-          <h3>Infonuagique et hybride</h3>
-          <p>Architecture et migration vers le nuage public, ou maintien sur site lorsque c’est plus approprié. Conception d’environnements hybrides sécurisés et conformes.</p>
-          <ul class="tags"><li>AWS</li><li>GCP</li><li>DigitalOcean</li><li>WireGuard</li><li>Pare-feu</li><li>PKI</li><li>Vault</li><li>OpenBao</li></ul>
+          <p class="svc-path"><span class="fr">/infonuagique</span><span class="en" lang="en">/cloud</span></p>
+          <h3><span class="fr">Infonuagique et hybride</span><span class="en" lang="en">Cloud and hybrid</span></h3>
+          <p><span class="fr">Architecture et migration vers le nuage public, ou maintien sur site lorsque c’est plus approprié. Conception d’environnements hybrides sécurisés et conformes.</span><span class="en" lang="en">Architecture and migration to the public cloud, or keeping workloads on premises when more appropriate. Design of secure, compliant hybrid environments.</span></p>
+          <ul class="tags"><li>AWS</li><li>GCP</li><li>DigitalOcean</li><li>WireGuard</li><li><span class="fr">Pare-feu</span><span class="en" lang="en">Firewall</span></li><li>PKI</li><li>Vault</li><li>OpenBao</li></ul>
         </article>
         <article class="svc">
-          <p class="svc-path">/automatisation</p>
-          <h3>Automatisation et IaC</h3>
-          <p>Infrastructure définie sous forme de code, reproductible et versionnée, afin de réduire les interventions manuelles et de fiabiliser les déploiements.</p>
+          <p class="svc-path"><span class="fr">/automatisation</span><span class="en" lang="en">/automation</span></p>
+          <h3><span class="fr">Automatisation et IaC</span><span class="en" lang="en">Automation and IaC</span></h3>
+          <p><span class="fr">Infrastructure définie sous forme de code, reproductible et versionnée, afin de réduire les interventions manuelles et de fiabiliser les déploiements.</span><span class="en" lang="en">Infrastructure defined as code, reproducible and version-controlled, to reduce manual work and make deployments more reliable.</span></p>
           <ul class="tags"><li>Terraform</li><li>OpenTofu</li><li>Ansible</li><li>GitLab CI</li><li>GitHub Actions</li><li>Python</li><li>Go</li></ul>
         </article>
         <article class="svc">
-          <p class="svc-path">/formation</p>
-          <h3>Formation et transfert</h3>
-          <p>Formations pratiques visant l’autonomie de vos équipes : Docker, Kubernetes, Ansible et observabilité. Documentation et accompagnement inclus.</p>
-          <ul class="tags"><li>Docker</li><li>Kubernetes</li><li>Ansible</li><li>Ateliers</li></ul>
+          <p class="svc-path"><span class="fr">/formation</span><span class="en" lang="en">/training</span></p>
+          <h3><span class="fr">Formation et transfert</span><span class="en" lang="en">Training and knowledge transfer</span></h3>
+          <p><span class="fr">Formations pratiques visant l’autonomie de vos équipes : Docker, Kubernetes, Ansible et observabilité. Documentation et accompagnement inclus.</span><span class="en" lang="en">Hands-on training to make your teams self-sufficient: Docker, Kubernetes, Ansible and observability. Documentation and support included.</span></p>
+          <ul class="tags"><li>Docker</li><li>Kubernetes</li><li>Ansible</li><li><span class="fr">Ateliers</span><span class="en" lang="en">Workshops</span></li></ul>
         </article>
       </div>
     </div>
@@ -242,16 +251,16 @@ qwen2.5-coder:14b  9.0 GB
   <section id="llm">
     <div class="wrap llm">
       <div class="sec-head" style="margin-bottom:0">
-        <p class="eyebrow">IA générative</p>
-        <h2>Des LLM locaux, sur votre infrastructure</h2>
-        <p>Tirez parti des modèles de langage sans transmettre vos données à un tiers. Notre équipe met en place des modèles ouverts sur vos serveurs, en tenant compte de vos exigences opérationnelles et de sécurité.</p>
+        <p class="eyebrow"><span class="fr">IA générative locale</span><span class="en" lang="en">Local generative AI</span></p>
+        <h2><span class="fr">L’IA générative, hébergée sur votre infrastructure</span><span class="en" lang="en">Generative AI, hosted on your infrastructure</span></h2>
+        <p><span class="fr">Tirez parti des modèles de langage sans transmettre vos données à un tiers. Notre équipe met en place des modèles ouverts sur vos serveurs, en tenant compte de vos exigences opérationnelles et de sécurité.</span><span class="en" lang="en">Take advantage of language models without sending your data to a third party. Our team deploys open models on your servers, taking into account your operational and security requirements.</span></p>
       </div>
       <ul class="llm-list">
-        <li><span class="chk">[✓]</span><div><b>Souveraineté des données</b><span>Vos documents et vos requêtes ne quittent jamais votre réseau.</span></div></li>
-        <li><span class="chk">[✓]</span><div><b>Assistant sur vos propres documents</b><span>Recherche augmentée (RAG) sur vos politiques, procédures et bases de connaissances.</span></div></li>
-        <li><span class="chk">[✓]</span><div><b>Coûts prévisibles</b><span>Aucune facturation à l’utilisation : le matériel est dimensionné selon vos besoins réels.</span></div></li>
-        <li><span class="chk">[✓]</span><div><b>Intégré à votre environnement</b><span>Une mise en place adaptée à votre infrastructure existante et à vos besoins.</span></div></li>
-        <li><span class="chk">[✓]</span><div><b>Solutions ouvertes</b><span>Des modèles et des outils open source, choisis selon vos besoins.</span></div></li>
+        <li><span class="chk">[✓]</span><div><b><span class="fr">Souveraineté des données</span><span class="en" lang="en">Data sovereignty</span></b><span><span class="fr">Vos documents et vos requêtes ne quittent jamais votre réseau.</span><span class="en" lang="en">Your documents and queries never leave your network.</span></span></div></li>
+        <li><span class="chk">[✓]</span><div><b><span class="fr">Assistant sur vos propres documents</span><span class="en" lang="en">An assistant for your own documents</span></b><span><span class="fr">Recherche augmentée (RAG) sur vos politiques, procédures et bases de connaissances.</span><span class="en" lang="en">Retrieval-augmented generation (RAG) over your policies, procedures and knowledge bases.</span></span></div></li>
+        <li><span class="chk">[✓]</span><div><b><span class="fr">Coûts prévisibles</span><span class="en" lang="en">Predictable costs</span></b><span><span class="fr">Aucune facturation à l’utilisation : le matériel est dimensionné selon vos besoins réels.</span><span class="en" lang="en">No usage-based billing: hardware is sized to your actual needs.</span></span></div></li>
+        <li><span class="chk">[✓]</span><div><b><span class="fr">Intégré à votre environnement</span><span class="en" lang="en">Integrated with your environment</span></b><span><span class="fr">Une mise en place adaptée à votre infrastructure existante et à vos besoins.</span><span class="en" lang="en">A setup tailored to your existing infrastructure and your needs.</span></span></div></li>
+        <li><span class="chk">[✓]</span><div><b><span class="fr">Solutions ouvertes</span><span class="en" lang="en">Open solutions</span></b><span><span class="fr">Des modèles et des outils open source, choisis selon vos besoins.</span><span class="en" lang="en">Open source models and tools, selected to fit your needs.</span></span></div></li>
       </ul>
     </div>
   </section>
@@ -259,14 +268,14 @@ qwen2.5-coder:14b  9.0 GB
   <section class="band">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">Pourquoi l’open source</p>
-        <h2>Des choix techniques qui vous appartiennent</h2>
+        <p class="eyebrow"><span class="fr">Pourquoi l’open source</span><span class="en" lang="en">Why open source</span></p>
+        <h2><span class="fr">Des choix techniques qui vous appartiennent</span><span class="en" lang="en">Technology choices that remain yours</span></h2>
       </div>
       <div class="why">
-        <div><h3>Aucune dépendance</h3><p>Des standards ouverts et portables : vous restez libre de changer d’hébergeur ou de fournisseur.</p></div>
-        <div><h3>Transparence</h3><p>Code auditable et configurations versionnées, pour une visibilité complète sur vos systèmes.</p></div>
-        <div><h3>Coûts maîtrisés</h3><p>Aucuns frais de licence par serveur ou par volume de données : les investissements sont consacrés à vos priorités.</p></div>
-        <div><h3>Éprouvé</h3><p>Des technologies reconnues, utilisées par de nombreuses plateformes d’envergure internationale.</p></div>
+        <div><h3><span class="fr">Aucune dépendance</span><span class="en" lang="en">No lock-in</span></h3><p><span class="fr">Des standards ouverts et portables : vous restez libre de changer d’hébergeur ou de fournisseur.</span><span class="en" lang="en">Open, portable standards: you remain free to change hosting provider or vendor.</span></p></div>
+        <div><h3><span class="fr">Transparence</span><span class="en" lang="en">Transparency</span></h3><p><span class="fr">Code auditable et configurations versionnées, pour une visibilité complète sur vos systèmes.</span><span class="en" lang="en">Auditable code and version-controlled configurations, for full visibility into your systems.</span></p></div>
+        <div><h3><span class="fr">Coûts maîtrisés</span><span class="en" lang="en">Controlled costs</span></h3><p><span class="fr">Aucuns frais de licence par serveur ou par volume de données : les investissements sont consacrés à vos priorités.</span><span class="en" lang="en">No licensing fees per server or per data volume: your investment goes to your priorities.</span></p></div>
+        <div><h3><span class="fr">Éprouvé</span><span class="en" lang="en">Proven</span></h3><p><span class="fr">Des technologies reconnues, utilisées par de nombreuses plateformes d’envergure internationale.</span><span class="en" lang="en">Recognized technologies, used by many large-scale international platforms.</span></p></div>
       </div>
     </div>
   </section>
@@ -274,14 +283,14 @@ qwen2.5-coder:14b  9.0 GB
   <section id="approche">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">Approche</p>
-        <h2>Comment se déroule un mandat</h2>
+        <p class="eyebrow"><span class="fr">Approche</span><span class="en" lang="en">Approach</span></p>
+        <h2><span class="fr">Comment se déroule un mandat</span><span class="en" lang="en">How an engagement works</span></h2>
       </div>
       <ol class="steps">
-        <li><h3>Diagnostic</h3><p>Évaluation de l’environnement existant, des risques et des priorités d’affaires.</p></li>
-        <li><h3>Conception</h3><p>Définition de l’architecture cible et d’une feuille de route par étapes.</p></li>
-        <li><h3>Mise en œuvre</h3><p>Déploiement automatisé, testé et documenté, en limitant les impacts sur les opérations.</p></li>
-        <li><h3>Transfert</h3><p>Formation de vos équipes afin d’assurer leur autonomie au quotidien.</p></li>
+        <li><h3><span class="fr">Diagnostic</span><span class="en" lang="en">Assessment</span></h3><p><span class="fr">Évaluation de l’environnement existant, des risques et des priorités d’affaires.</span><span class="en" lang="en">Evaluation of the existing environment, risks and business priorities.</span></p></li>
+        <li><h3><span class="fr">Conception</span><span class="en" lang="en">Design</span></h3><p><span class="fr">Définition de l’architecture cible et d’une feuille de route par étapes.</span><span class="en" lang="en">Definition of the target architecture and a phased roadmap.</span></p></li>
+        <li><h3><span class="fr">Mise en œuvre</span><span class="en" lang="en">Implementation</span></h3><p><span class="fr">Déploiement automatisé, testé et documenté, en limitant les impacts sur les opérations.</span><span class="en" lang="en">Automated, tested and documented deployment, minimizing the impact on operations.</span></p></li>
+        <li><h3><span class="fr">Transfert</span><span class="en" lang="en">Handover</span></h3><p><span class="fr">Formation de vos équipes afin d’assurer leur autonomie au quotidien.</span><span class="en" lang="en">Training your teams to ensure their day-to-day autonomy.</span></p></li>
       </ol>
     </div>
   </section>
@@ -290,17 +299,17 @@ qwen2.5-coder:14b  9.0 GB
   <section id="contact" class="contact">
     <div class="wrap">
       <div>
-        <p class="eyebrow" style="color:inherit;opacity:.65">Nous joindre</p>
-        <h2>Communiquez avec nous</h2>
-        <p>Pour toute demande d’information ou de mandat, n’hésitez pas à communiquer avec nous par courriel. Nous vous répondrons dans les meilleurs délais.</p>
+        <p class="eyebrow" style="color:inherit;opacity:.65"><span class="fr">Nous joindre</span><span class="en" lang="en">Contact us</span></p>
+        <h2><span class="fr">Communiquez avec nous</span><span class="en" lang="en">Get in touch</span></h2>
+        <p><span class="fr">Pour toute demande d’information ou de mandat, n’hésitez pas à communiquer avec nous par courriel. Nous vous répondrons dans les meilleurs délais.</span><span class="en" lang="en">For any information or engagement request, please contact us by email. We will respond as soon as possible.</span></p>
       </div>
       <div class="mailbox">
-        <p class="eyebrow">Courriel</p>
+        <p class="eyebrow"><span class="fr">Courriel</span><span class="en" lang="en">Email</span></p>
         <a class="mail" id="mail" href="mailto:info@yplcs.com">info@yplcs.com</a>
         <div class="mail-actions">
-          <a class="btn" href="mailto:info@yplcs.com">Écrire un courriel</a>
-          <button class="btn btn-ghost" id="copy" type="button">Copier l’adresse</button>
-          <span class="copied" id="copied" hidden>Adresse copiée</span>
+          <a class="btn" href="mailto:info@yplcs.com"><span class="fr">Écrire un courriel</span><span class="en" lang="en">Send an email</span></a>
+          <button class="btn btn-ghost" id="copy" type="button"><span class="fr">Copier l’adresse</span><span class="en" lang="en">Copy address</span></button>
+          <span class="copied" id="copied" hidden><span class="fr">Adresse copiée</span><span class="en" lang="en">Address copied</span></span>
         </div>
       </div>
     </div>
@@ -315,6 +324,23 @@ qwen2.5-coder:14b  9.0 GB
 </footer>
 
 <script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('lang');
+  var TITLE={fr:'Services-Conseils YPL',en:'YPL Consulting Services'};
+  function apply(l){
+    root.classList.toggle('lang-en', l==='en');
+    root.lang = l==='en' ? 'en' : 'fr-CA';
+    btn.textContent = l==='en' ? 'FR' : 'EN';
+    btn.setAttribute('aria-label', l==='en' ? 'Version française' : 'English version');
+    document.title = TITLE[l];
+    try{ localStorage.setItem('ypl-lang', l); }catch(e){}
+  }
+  var cur='fr';
+  if (location.hash==='#en') cur='en';
+  else { try{ if(localStorage.getItem('ypl-lang')==='en') cur='en'; }catch(e){} }
+  apply(cur);
+  btn.addEventListener('click', function(){ cur = cur==='en' ? 'fr' : 'en'; apply(cur); });
+})();
 document.getElementById('yr').textContent = new Date().getFullYear();
 (function(){
   var btn = document.getElementById('copy'), ok = document.getElementById('copied'), mail = document.getElementById('mail');
